@@ -6,11 +6,18 @@ const source = await readFile(
   "utf8",
 );
 
-assert.match(source, /@version\s+1\.0\.2/);
+assert.match(source, /@version\s+1\.0\.3/);
 assert.match(source, /@grant\s+GM_addStyle/);
-assert.match(
-  source,
-  /@icon\s+https:\/\/www\.vip261112\.com\/favicon\.ico\?v=5/,
+const iconMatch = source.match(
+  /^\/\/ @icon\s+data:image\/x-icon;base64,([A-Za-z0-9+/=]+)$/m,
+);
+assert.ok(iconMatch, "missing embedded ICO data URI");
+const iconBytes = Buffer.from(iconMatch[1], "base64");
+assert.equal(iconBytes.length, 4286, "unexpected embedded icon size");
+assert.deepEqual(
+  [...iconBytes.subarray(0, 4)],
+  [0, 0, 1, 0],
+  "invalid ICO signature",
 );
 assert.match(
   source,
