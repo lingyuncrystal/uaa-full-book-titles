@@ -1,0 +1,30 @@
+# UAA 书名完整显示与卡片自适应
+
+面向 ScriptCat、Tampermonkey 和 Violentmonkey 的轻量用户脚本，用于完整显示 UAA 小说书名，并让书籍卡片随标题长度自动增高。
+
+## 功能
+
+- 小说列表页：解除单行省略号，长书名自动换行。
+- 首页与频道海报：解除一行或两行限制，完整显示长书名。
+- 卡片自适应：标题增加行数时，卡片高度随内容增长，不覆盖作者、评分等信息。
+- 动态内容兼容：只注入 CSS，分页、筛选及异步加载的新卡片无需额外扫描即可生效。
+
+## 生效范围
+
+- `vip261112.com` 及其子域名。
+- `uaa.com`、`uaa001.com`、`uaa002.com` 等以 `uaa` 开头的 `.com` 镜像及其子域名。
+
+## 安装
+
+将 [`uaa-full-book-titles.user.js`](./uaa-full-book-titles.user.js) 安装到 ScriptCat、Tampermonkey 或 Violentmonkey，然后刷新 UAA 页面。
+
+## 验证
+
+```bash
+npm test
+node /Users/Alan/.agents/skills/scriptcat-userscript/scripts/check.mjs uaa-full-book-titles.user.js
+```
+
+## 许可证
+
+MIT
