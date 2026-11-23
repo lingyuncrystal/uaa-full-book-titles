@@ -1,6 +1,6 @@
 {
   "name": "uaa-full-book-titles",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "scripts": {
     "test": "node --check uaa-full-book-titles.user.js && node tests/check.mjs"

@@ -6,8 +6,12 @@ const source = await readFile(
   "utf8",
 );
 
-assert.match(source, /@version\s+1\.0\.1/);
+assert.match(source, /@version\s+1\.0\.2/);
 assert.match(source, /@grant\s+GM_addStyle/);
+assert.match(
+  source,
+  /@icon\s+https:\/\/www\.vip261112\.com\/favicon\.ico\?v=5/,
+);
 assert.match(
   source,
   /@downloadURL\s+https:\/\/raw\.githubusercontent\.com\/lingyuncrystal\/uaa-full-book-titles\/main\/uaa-full-book-titles\.user\.js/,
