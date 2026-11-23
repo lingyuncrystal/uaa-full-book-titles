@@ -16,7 +16,11 @@
 
 ## 安装
 
-将 [`uaa-full-book-titles.user.js`](./uaa-full-book-titles.user.js) 安装到 ScriptCat、Tampermonkey 或 Violentmonkey，然后刷新 UAA 页面。
+手机浏览器安装 ScriptCat、Tampermonkey 或 Violentmonkey 后，打开以下地址即可安装：
+
+<https://raw.githubusercontent.com/lingyuncrystal/uaa-full-book-titles/main/uaa-full-book-titles.user.js>
+
+脚本内置固定的下载与更新地址，后续可直接通过脚本管理器检查更新。
 
 ## 验证
 

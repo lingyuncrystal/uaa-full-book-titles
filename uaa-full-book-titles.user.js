@@ -1,9 +1,11 @@
 // ==UserScript==
 // @name         UAA 书名完整显示与卡片自适应
 // @namespace    https://github.com/lingyuncrystal/uaa-full-book-titles
-// @version      1.0.0
+// @version      1.0.1
 // @description  完整显示 UAA 小说书名，并让列表与首页书籍卡片随长标题自动增高。
 // @author       Alan
+// @downloadURL  https://raw.githubusercontent.com/lingyuncrystal/uaa-full-book-titles/main/uaa-full-book-titles.user.js
+// @updateURL    https://raw.githubusercontent.com/lingyuncrystal/uaa-full-book-titles/main/uaa-full-book-titles.user.js
 // @match        *://vip261112.com/*
 // @match        *://*.vip261112.com/*
 // @include      /^https?:\/\/(?:[^/]+\.)?uaa[a-z0-9-]*\.com(?::\d+)?(?:\/|$)/
