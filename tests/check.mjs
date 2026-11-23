@@ -6,7 +6,7 @@ const source = await readFile(
   "utf8",
 );
 
-assert.match(source, /@version\s+1\.0\.3/);
+assert.match(source, /@version\s+1\.0\.4/);
 assert.match(source, /@grant\s+GM_addStyle/);
 const iconMatch = source.match(
   /^\/\/ @icon\s+data:image\/x-icon;base64,([A-Za-z0-9+/=]+)$/m,
@@ -33,6 +33,9 @@ assert.match(source, /@include\s+\/\^https\?:\\\/\\\//);
 
 for (const selector of [
   'a.cn-lcard[href*="/novel/intro"] .cn-lcard__t',
+  '#detail .nd-t2',
+  '#detail .nd-latest > b',
+  'a.cn-lcard[href*="/novel/intro"] .cn-lcard__ch',
   'a.cn-poster[href*="/novel/intro"] .cn-poster__cap .t',
   'a.cn-poster[href*="/novel/intro"] .cn-poster__info .t',
 ]) {
@@ -45,6 +48,10 @@ for (const declaration of [
   "-webkit-line-clamp: unset !important",
   "overflow-wrap: anywhere !important",
   "height: auto !important",
+  "width: 100% !important",
+  "max-width: 100% !important",
+  "min-width: 0 !important",
+  "flex: 1 1 auto !important",
 ]) {
   assert.ok(source.includes(declaration), `missing declaration: ${declaration}`);
 }
