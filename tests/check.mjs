@@ -6,7 +6,7 @@ const source = await readFile(
   "utf8",
 );
 
-assert.match(source, /@version\s+1\.0\.4/);
+assert.match(source, /@version\s+1\.0\.5/);
 assert.match(source, /@grant\s+GM_addStyle/);
 const iconMatch = source.match(
   /^\/\/ @icon\s+data:image\/x-icon;base64,([A-Za-z0-9+/=]+)$/m,
@@ -55,5 +55,16 @@ for (const declaration of [
 ]) {
   assert.ok(source.includes(declaration), `missing declaration: ${declaration}`);
 }
+
+assert.match(
+  source,
+  /#detail \.nd-latest\s*\{[^}]*white-space:\s*nowrap !important;/s,
+  'the "最新：" label must stay on one line',
+);
+assert.match(
+  source,
+  /#detail \.nd-latest > b,[\s\S]*?white-space:\s*normal !important;/,
+  "the chapter title must remain wrappable",
+);
 
 console.log("userscript metadata and adaptive-title CSS checks passed");
