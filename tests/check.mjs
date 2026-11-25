@@ -6,7 +6,7 @@ const source = await readFile(
   "utf8",
 );
 
-assert.match(source, /@version\s+1\.0\.6/);
+assert.match(source, /@version\s+1\.0\.7/);
 assert.match(source, /@grant\s+GM_addStyle/);
 const iconMatch = source.match(
   /^\/\/ @icon\s+data:image\/x-icon;base64,([A-Za-z0-9+/=]+)$/m,
@@ -52,6 +52,7 @@ for (const declaration of [
   "max-width: 100% !important",
   "min-width: 0 !important",
   "flex: 1 1 auto !important",
+  "text-align: left !important",
 ]) {
   assert.ok(source.includes(declaration), `missing declaration: ${declaration}`);
 }
