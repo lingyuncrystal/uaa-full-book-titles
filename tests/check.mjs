@@ -6,7 +6,7 @@ const source = await readFile(
   "utf8",
 );
 
-assert.match(source, /@version\s+1\.0\.5/);
+assert.match(source, /@version\s+1\.0\.6/);
 assert.match(source, /@grant\s+GM_addStyle/);
 const iconMatch = source.match(
   /^\/\/ @icon\s+data:image\/x-icon;base64,([A-Za-z0-9+/=]+)$/m,
@@ -58,8 +58,8 @@ for (const declaration of [
 
 assert.match(
   source,
-  /#detail \.nd-latest\s*\{[^}]*white-space:\s*nowrap !important;/s,
-  'the "最新：" label must stay on one line',
+  /#detail \.nd-latest\s*\{[^}]*white-space:\s*normal !important;/s,
+  'the "最新：" label must be allowed to form the two-line narrow label',
 );
 assert.match(
   source,
