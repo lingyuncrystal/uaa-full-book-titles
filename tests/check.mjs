@@ -6,7 +6,7 @@ const source = await readFile(
   "utf8",
 );
 
-assert.match(source, /@version\s+1\.2\.3/);
+assert.match(source, /@version\s+1\.2\.4/);
 assert.match(source, /@grant\s+GM_addStyle/);
 const iconMatch = source.match(
   /^\/\/ @icon\s+data:image\/x-icon;base64,([A-Za-z0-9+/=]+)$/m,
@@ -91,10 +91,12 @@ assert.match(source, /#detail \.nd-latest\s*\{[^}]*flex-wrap:\s*wrap !important;
 assert.match(source, /#detail \.nd-latest > b\s*\{[^}]*color:\s*rgb\(199, 196, 206\) !important;/s, "detail chapter title color must match the list card");
 assert.match(source, /#detail \.nd-latest > b\s*\{[^}]*min-width:\s*140px !important;/s, "detail chapter title must keep the list-card width");
 assert.match(source, /#detail \.nd-latest > b\s*\{[^}]*webkit-line-clamp:\s*unset !important;/s, "detail chapter title must not be clamped");
-assert.match(source, /#detail \.nd-latest \.tm\s*\{[^}]*margin-left:\s*auto !important;/s, "detail time must align right under the chapter name");
-assert.match(source, /#detail \.nd-hero__in\s*\{[^}]*grid-template-columns:\s*72px minmax\(0, 1fr\) !important;/s, "mobile detail must widen the info column");
-assert.match(source, /#detail \.nd-cover\s*\{[^}]*width:\s*72px !important;/s, "mobile detail cover must shrink to 72px");
+assert.match(source, /#detail \.nd-latest \.tm\s*\{[^}]*margin-left:\s*0 !important;/s, "detail time must sit next to the chapter name");
+assert.match(source, /#detail \.nd-hero__in\s*\{[^}]*grid-template-columns:\s*96px minmax\(0, 1fr\) !important;/s, "mobile detail must widen the info column");
+assert.match(source, /#detail \.nd-cover\s*\{[^}]*width:\s*96px !important;/s, "mobile detail cover must be 96px");
 assert.match(source, /#detail \.nd-latest \.nd-go\s*\{[^}]*display:\s*none !important;/s, "mobile detail arrow must be hidden");
 assert.match(source, /#detail \.nd-latest\s*\{[^}]*flex-wrap:\s*nowrap !important;/s, "mobile detail latest row must not wrap");
+assert.match(source, /#detail \.nd-latest\s*\{[^}]*gap:\s*0 !important;/s, "latest label and chapter must have no gap");
+assert.match(source, /#detail \.nd-latest > b\s*\{[^}]*margin-right:\s*0 !important;/s, "chapter must touch the time");
 
 console.log("userscript metadata and adaptive-title CSS checks passed");
