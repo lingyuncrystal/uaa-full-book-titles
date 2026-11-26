@@ -6,7 +6,7 @@ const source = await readFile(
   "utf8",
 );
 
-assert.match(source, /@version\s+1\.0\.8/);
+assert.match(source, /@version\s+1\.0\.9/);
 assert.match(source, /@grant\s+GM_addStyle/);
 const iconMatch = source.match(
   /^\/\/ @icon\s+data:image\/x-icon;base64,([A-Za-z0-9+/=]+)$/m,
@@ -33,6 +33,7 @@ assert.match(source, /@include\s+\/\^https\?:\\\/\\\//);
 
 for (const selector of [
   'a.cn-lcard[href*="/novel/intro"] .cn-lcard__t',
+  'a.cn-lcard[href*="/novel/intro"] .cn-lcard__h:has(> .cn-lcard__fr)',
   '#detail .nd-t2',
   '#detail .nd-latest > b',
   'a.cn-lcard[href*="/novel/intro"] .cn-lcard__ch',
@@ -69,5 +70,6 @@ assert.match(
 );
 assert.match(source, /-webkit-line-clamp:\s*2 !important;/, "latest and directory names must be limited to two lines");
 assert.match(source, /#detail \.ndc-name/, "chapter directory names must use the two-line limit");
+assert.match(source, /\.cn-lcard__fr\s*\{[^}]*white-space:\s*nowrap !important;/s, "original-first badge must stay together");
 
 console.log("userscript metadata and adaptive-title CSS checks passed");
