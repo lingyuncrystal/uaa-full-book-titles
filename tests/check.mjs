@@ -6,7 +6,7 @@ const source = await readFile(
   "utf8",
 );
 
-assert.match(source, /@version\s+1\.2\.1/);
+assert.match(source, /@version\s+1\.2\.2/);
 assert.match(source, /@grant\s+GM_addStyle/);
 const iconMatch = source.match(
   /^\/\/ @icon\s+data:image\/x-icon;base64,([A-Za-z0-9+/=]+)$/m,
@@ -65,13 +65,13 @@ for (const declaration of [
 
 assert.match(
   source,
-  /#detail \.nd-latest\s*\{[^}]*white-space:\s*nowrap !important;/s,
-  'the "最新：" label must remain on one line',
+  /#detail \.nd-latest\s*\{[^}]*white-space:\s*normal !important;/s,
+  "the detail latest row must allow the chapter title to wrap",
 );
 assert.match(
   source,
-  /#detail \.nd-latest > b,[\s\S]*?white-space:\s*normal !important;/,
-  "the chapter title must remain wrappable",
+  /#detail \.nd-latest > b\s*\{[\s\S]*?white-space:\s*normal !important;/,
+  "the detail chapter title must remain wrappable",
 );
 assert.match(source, /-webkit-line-clamp:\s*2 !important;/, "latest and directory names must be limited to two lines");
 assert.match(source, /#detail \.ndc-name/, "chapter directory names must use the two-line limit");
@@ -86,5 +86,11 @@ assert.match(source, /#favGridN\.cl-grid \.cl-card \.cl-mini__v\s*\{[^}]*display
 assert.match(source, /@media\s*\(max-width:\s*767px\)/, "collection overrides must be mobile-only");
 assert.match(source, /#favGridN\.cl-grid \.cl-card \.cn-lcard__by\s*\{[^}]*display:\s*block !important;/s, "collection authors must remain visible");
 assert.match(source, /#favGridN\.cl-grid \.cl-card \.cn-lcard__catlink\s*\{[^}]*font-size:\s*inherit !important;/s, "collection category must match author size");
+assert.match(source, /#detail \.nd-latest\s*\{[^}]*font-size:\s*11\.5px !important;/s, "detail latest label must match the list card font size");
+assert.match(source, /#detail \.nd-latest\s*\{[^}]*flex-wrap:\s*wrap !important;/s, "detail latest row must wrap");
+assert.match(source, /#detail \.nd-latest > b\s*\{[^}]*color:\s*rgb\(199, 196, 206\) !important;/s, "detail chapter title color must match the list card");
+assert.match(source, /#detail \.nd-latest > b\s*\{[^}]*min-width:\s*140px !important;/s, "detail chapter title must keep the list-card width");
+assert.match(source, /#detail \.nd-latest > b\s*\{[^}]*webkit-line-clamp:\s*unset !important;/s, "detail chapter title must not be clamped");
+assert.match(source, /#detail \.nd-latest \.tm\s*\{[^}]*margin-left:\s*auto !important;/s, "detail time must align right under the chapter name");
 
 console.log("userscript metadata and adaptive-title CSS checks passed");
