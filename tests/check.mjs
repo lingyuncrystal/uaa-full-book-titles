@@ -6,7 +6,7 @@ const source = await readFile(
   "utf8",
 );
 
-assert.match(source, /@version\s+1\.0\.7/);
+assert.match(source, /@version\s+1\.0\.8/);
 assert.match(source, /@grant\s+GM_addStyle/);
 const iconMatch = source.match(
   /^\/\/ @icon\s+data:image\/x-icon;base64,([A-Za-z0-9+/=]+)$/m,
@@ -59,13 +59,15 @@ for (const declaration of [
 
 assert.match(
   source,
-  /#detail \.nd-latest\s*\{[^}]*white-space:\s*normal !important;/s,
-  'the "最新：" label must be allowed to form the two-line narrow label',
+  /#detail \.nd-latest\s*\{[^}]*white-space:\s*nowrap !important;/s,
+  'the "最新：" label must remain on one line',
 );
 assert.match(
   source,
   /#detail \.nd-latest > b,[\s\S]*?white-space:\s*normal !important;/,
   "the chapter title must remain wrappable",
 );
+assert.match(source, /-webkit-line-clamp:\s*2 !important;/, "latest and directory names must be limited to two lines");
+assert.match(source, /#detail \.ndc-name/, "chapter directory names must use the two-line limit");
 
 console.log("userscript metadata and adaptive-title CSS checks passed");
