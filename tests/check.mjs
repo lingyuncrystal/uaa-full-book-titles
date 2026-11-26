@@ -6,7 +6,7 @@ const source = await readFile(
   "utf8",
 );
 
-assert.match(source, /@version\s+1\.1\.7/);
+assert.match(source, /@version\s+1\.1\.9/);
 assert.match(source, /@grant\s+GM_addStyle/);
 const iconMatch = source.match(
   /^\/\/ @icon\s+data:image\/x-icon;base64,([A-Za-z0-9+/=]+)$/m,
@@ -43,6 +43,7 @@ for (const selector of [
   '#favGridN.cl-grid',
   '#favGridN.cl-grid .cl-card',
   '#favGridN.cl-grid .cl-card .cn-lcard__cv',
+  '#favGridN.cl-grid .cl-card .cn-lcard__meta',
 ]) {
   assert.ok(source.includes(selector), `missing selector: ${selector}`);
 }
@@ -80,5 +81,7 @@ assert.match(source, /line-height:\s*1\.35 !important;/, "title line spacing mus
 assert.match(source, /flex:\s*0 0 26% !important;/, "cover column must match the reference proportion");
 assert.match(source, /\.cn-lcard__ch\s*\{[^}]*white-space:\s*nowrap !important;/s, "list chapter names must stay on one line");
 assert.match(source, /-webkit-line-clamp:\s*3 !important;/, "book descriptions must have enough room for three lines");
+assert.match(source, /#favGridN\.cl-grid \.cl-card \.cn-lcard__meta\s*\{[^}]*display:\s*none !important;/s, "collection statistics must be hidden");
+assert.match(source, /#favGridN\.cl-grid \.cl-card \.cn-lcard__by\s*\{[^}]*display:\s*block !important;/s, "collection authors must remain visible");
 
 console.log("userscript metadata and adaptive-title CSS checks passed");
