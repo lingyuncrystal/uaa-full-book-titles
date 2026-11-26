@@ -6,7 +6,7 @@ const source = await readFile(
   "utf8",
 );
 
-assert.match(source, /@version\s+1\.1\.9/);
+assert.match(source, /@version\s+1\.2\.1/);
 assert.match(source, /@grant\s+GM_addStyle/);
 const iconMatch = source.match(
   /^\/\/ @icon\s+data:image\/x-icon;base64,([A-Za-z0-9+/=]+)$/m,
@@ -81,7 +81,10 @@ assert.match(source, /line-height:\s*1\.35 !important;/, "title line spacing mus
 assert.match(source, /flex:\s*0 0 26% !important;/, "cover column must match the reference proportion");
 assert.match(source, /\.cn-lcard__ch\s*\{[^}]*white-space:\s*nowrap !important;/s, "list chapter names must stay on one line");
 assert.match(source, /-webkit-line-clamp:\s*3 !important;/, "book descriptions must have enough room for three lines");
-assert.match(source, /#favGridN\.cl-grid \.cl-card \.cn-lcard__meta\s*\{[^}]*display:\s*none !important;/s, "collection statistics must be hidden");
+assert.match(source, /#favGridN\.cl-grid \.cl-card \.cn-lcard__meta\s*\{[^}]*display:\s*none !important;/s, "collection icon statistics must be hidden on mobile");
+assert.match(source, /#favGridN\.cl-grid \.cl-card \.cl-mini__v\s*\{[^}]*display:\s*none !important;/s, "collection view and favorite statistics must be hidden on mobile");
+assert.match(source, /@media\s*\(max-width:\s*767px\)/, "collection overrides must be mobile-only");
 assert.match(source, /#favGridN\.cl-grid \.cl-card \.cn-lcard__by\s*\{[^}]*display:\s*block !important;/s, "collection authors must remain visible");
+assert.match(source, /#favGridN\.cl-grid \.cl-card \.cn-lcard__catlink\s*\{[^}]*font-size:\s*inherit !important;/s, "collection category must match author size");
 
 console.log("userscript metadata and adaptive-title CSS checks passed");
