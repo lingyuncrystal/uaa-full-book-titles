@@ -6,7 +6,7 @@ const source = await readFile(
   "utf8",
 );
 
-assert.match(source, /@version\s+1\.1\.4/);
+assert.match(source, /@version\s+1\.1\.7/);
 assert.match(source, /@grant\s+GM_addStyle/);
 const iconMatch = source.match(
   /^\/\/ @icon\s+data:image\/x-icon;base64,([A-Za-z0-9+/=]+)$/m,
@@ -40,6 +40,9 @@ for (const selector of [
   'a.cn-lcard[href*="/novel/intro"] .cn-lcard__ch',
   'a.cn-poster[href*="/novel/intro"] .cn-poster__cap .t',
   'a.cn-poster[href*="/novel/intro"] .cn-poster__info .t',
+  '#favGridN.cl-grid',
+  '#favGridN.cl-grid .cl-card',
+  '#favGridN.cl-grid .cl-card .cn-lcard__cv',
 ]) {
   assert.ok(source.includes(selector), `missing selector: ${selector}`);
 }
