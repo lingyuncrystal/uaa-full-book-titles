@@ -6,7 +6,7 @@ const source = await readFile(
   "utf8",
 );
 
-assert.match(source, /@version\s+1\.1\.2/);
+assert.match(source, /@version\s+1\.1\.3/);
 assert.match(source, /@grant\s+GM_addStyle/);
 const iconMatch = source.match(
   /^\/\/ @icon\s+data:image\/x-icon;base64,([A-Za-z0-9+/=]+)$/m,
@@ -74,7 +74,7 @@ assert.match(source, /#detail \.ndc-name/, "chapter directory names must use the
 assert.match(source, /\.cn-lcard__fr\s*\{[^}]*white-space:\s*nowrap !important;/s, "original-first badge must stay together");
 assert.match(source, /aspect-ratio:\s*2 \/ 3 !important;/, "book covers must keep the reference portrait ratio");
 assert.match(source, /line-height:\s*1\.35 !important;/, "title line spacing must match the reference card");
-assert.match(source, /-webkit-line-clamp:\s*2 !important;/, "list chapter names must be limited to two lines");
 assert.match(source, /flex:\s*0 0 26% !important;/, "cover column must match the reference proportion");
+assert.match(source, /\.cn-lcard__ch\s*\{[^}]*white-space:\s*nowrap !important;/s, "list chapter names must stay on one line");
 
 console.log("userscript metadata and adaptive-title CSS checks passed");
