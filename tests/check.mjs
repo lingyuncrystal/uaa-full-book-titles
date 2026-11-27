@@ -6,7 +6,7 @@ const source = await readFile(
   "utf8",
 );
 
-assert.match(source, /@version\s+1\.3\.0/);
+assert.match(source, /@version\s+1\.3\.1/);
 assert.match(source, /@grant\s+GM_addStyle/);
 const iconMatch = source.match(
   /^\/\/ @icon\s+data:image\/x-icon;base64,([A-Za-z0-9+/=]+)$/m,
