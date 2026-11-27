@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         UAA 书名完整显示与卡片自适应
 // @namespace    https://github.com/lingyuncrystal/uaa-full-book-titles
-// @version      1.3.1-dev.6
+// @version      1.3.1-dev.7
 // @description  （开发版）完整显示 UAA 小说书名，并让列表与首页书籍卡片随长标题自动增高；收藏页可按阅读中/追更/已读完分类。
 // @author       Alan
 // @icon         data:image/x-icon;base64,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AAAAAAAAAAr8AgAK+90ACvz7AAr8/wAK/P8ACvz/AAn6+QABMEoAAAAmAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAr7BgAK/BoACvwyAAr7UgAK/HQACfyXAAr8MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////////////////4B///4AD//4AAf/8A4D/+A/gf/gP8D/wH/g/8B/4H/Af+B/wH/wf8B/8H/AP/A/wD/wP8A/8D/AP/g/wD/4H8A/+B/AP/gfwD/8D8A//A/AH/wPwB/8D8Af/gfAH/4H4P/+B/////f///////////////8=
@@ -15,6 +15,8 @@
 // @grant        GM_getValue
 // @grant        GM_setValue
 // @grant        GM_registerMenuCommand
+// @grant        GM_xmlhttpRequest
+// @connect      dav.jianguoyun.com
 // @noframes
 // ==/UserScript==
 
@@ -511,6 +513,33 @@
       color: #888 !important;
       font-size: 11px !important;
     }
+    #uaa-settings .uaa-settings__sep {
+      margin-top: 12px !important;
+      padding-top: 10px !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    }
+
+    #uaa-settings .uaa-settings__field {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 4px !important;
+      padding: 4px 0 !important;
+    }
+
+    #uaa-settings .uaa-settings__field span {
+      color: #aaa !important;
+      font-size: 11px !important;
+    }
+
+    #uaa-settings .uaa-settings__field input {
+      padding: 6px 8px !important;
+      border-radius: 6px !important;
+      border: 1px solid rgba(255, 255, 255, 0.16) !important;
+      background: rgba(0, 0, 0, 0.2) !important;
+      color: #e8e6ec !important;
+      font-size: 12px !important;
+    }
+
 
 `;
   if (!uaaConfig.favCompact) {
@@ -534,6 +563,89 @@
   const saveProgress = (map) => {
     try { GM_setValue(PROGRESS_KEY, map); } catch (error) {}
   };
+  /* ===== 阅读进度同步（坚果云 WebDAV） ===== */
+  const SYNC_KEY = "uaa-webdav";
+  const loadSyncConfig = () => {
+    try { return GM_getValue(SYNC_KEY, {}) || {}; } catch (error) { return {}; }
+  };
+  const saveSyncConfig = (patch) => {
+    const next = Object.assign({}, loadSyncConfig(), patch);
+    try { GM_setValue(SYNC_KEY, next); } catch (error) {}
+    return next;
+  };
+  const syncConfigured = () => {
+    const cfg = loadSyncConfig();
+    return !!(cfg.url && cfg.user && cfg.pass && cfg.enabled !== false);
+  };
+  const mergeProgress = (current, incoming) => {
+    Object.keys(incoming || {}).forEach((id) => {
+      const item = incoming[id];
+      if (!item || typeof item !== "object") return;
+      const previous = current[id];
+      const no = Number(item.no) || 0;
+      if (!previous || no > Number(previous.no || 0) || (no === Number(previous.no || 0) && (Number(item.ts) || 0) > (Number(previous.ts) || 0))) {
+        current[id] = { no, title: item.title || "", ts: Number(item.ts) || Date.now() };
+      }
+    });
+    return current;
+  };
+  const webdavRequest = (method, payload) => new Promise((resolve, reject) => {
+    const cfg = loadSyncConfig();
+    if (!cfg.url || !cfg.user || !cfg.pass) return reject(new Error("WebDAV 未配置"));
+    const headers = { Authorization: "Basic " + btoa(cfg.user + ":" + cfg.pass) };
+    if (payload != null) headers["Content-Type"] = "application/json";
+    GM_xmlhttpRequest({
+      method,
+      url: cfg.url,
+      headers,
+      data: payload == null ? undefined : payload,
+      timeout: 15000,
+      onload: (res) => resolve(res),
+      ontimeout: () => reject(new Error("请求超时")),
+      onerror: () => reject(new Error("网络错误")),
+    });
+  });
+  const pullRemote = async () => {
+    try {
+      const res = await webdavRequest("GET");
+      if (res.status === 404) return {};
+      if (res.status !== 200) return null;
+      const parsed = JSON.parse(res.responseText || "{}");
+      return parsed.progress || parsed || {};
+    } catch (error) { return null; }
+  };
+  const pushRemote = async () => {
+    const progress = loadProgress();
+    const res = await webdavRequest("PUT", JSON.stringify({ exportedAt: new Date().toISOString(), progress }, null, 2));
+    if (res.status >= 200 && res.status < 300) return true;
+    if (res.status === 401) throw new Error("账号或应用密码错误");
+    throw new Error("HTTP " + res.status);
+  };
+  const syncProgress = async (direction) => {
+    if (direction === "pull" || direction === "both") {
+      const remote = await pullRemote();
+      if (remote) {
+        const current = loadProgress();
+        mergeProgress(current, remote);
+        saveProgress(current);
+      }
+    }
+    if (direction === "push" || direction === "both") {
+      const remote = await pullRemote();
+      const current = loadProgress();
+      if (remote) mergeProgress(current, remote);
+      saveProgress(current);
+      await pushRemote();
+    }
+    return loadProgress();
+  };
+  let syncTimer = null;
+  const scheduleSync = () => {
+    if (!syncConfigured()) return;
+    if (syncTimer) clearTimeout(syncTimer);
+    syncTimer = setTimeout(() => { syncProgress("push").catch(() => {}); }, 2000);
+  };
+
   const recordChapterProgress = () => {
     if (!uaaConfig.localProgress) return;
     if (location.pathname.replace(/\/+$/, "") !== "/novel/chapter") return;
@@ -549,6 +661,7 @@
         if (!previous || no >= Number(previous.no || 0)) {
           map[chapter.novelId] = { no, title: chapter.title || "", ts: Date.now() };
           saveProgress(map);
+          scheduleSync();
         }
         return;
       }
@@ -566,7 +679,7 @@
     const uidKey = Object.keys(localStorage).find((key) => key.startsWith("uaa_dsync:"));
     const cacheKey = "uaa-fav-history:" + (uidKey ? uidKey.split(":")[1] : "anon");
     const TTL = 30 * 60 * 1000;
-    const localProgress = loadProgress();
+    let localProgress = loadProgress();
     const historyMap = {};
 
     const chapterNo = (text) => {
@@ -730,15 +843,21 @@
     };
 
     const run = (grid) => {
-      loadHistory().then(() => {
+      const proceed = () => loadHistory().then(() => {
         const prepare = uaaConfig.favCrossPage ? collectCardsAllPages() : Promise.resolve(collectCards());
         prepare.then((cards) => {
+          localProgress = loadProgress();
           cards.forEach((card) => {
             card.category = classify(card.id, card.latest, card.finished);
           });
           buildTabs(grid, cards);
         });
       });
+      if (syncConfigured()) {
+        syncProgress("pull").catch(() => {}).then(proceed);
+      } else {
+        proceed();
+      }
     };
 
     const waitForGrid = () => {
@@ -771,6 +890,7 @@
       ["detailLatest", "详情页「最新：」行样式（缩小封面、去掉箭头、时间同行）"],
     ];
     const open = () => {
+      const davConfig = loadSyncConfig();
       let panel = document.getElementById("uaa-settings");
       if (!panel) {
         panel = document.createElement("div");
@@ -780,6 +900,14 @@
           '<div class="uaa-settings__panel">' +
           '<div class="uaa-settings__head"><b>UAA 脚本设置</b><button type="button" data-uaa-close aria-label="关闭">×</button></div>' +
           FIELDS.map(([key, label]) => '<label class="uaa-settings__row"><input type="checkbox" data-uaa-field="' + key + '"' + (uaaConfig[key] ? " checked" : "") + '><span>' + label + "</span></label>").join("") +
+          '<div class="uaa-settings__sep"><b>阅读进度同步（坚果云 WebDAV）</b></div>' +
+          '<label class="uaa-settings__field"><span>WebDAV 文件地址</span><input type="text" data-uaa-dav="url" value="' + (davConfig.url || "https://dav.jianguoyun.com/dav/uaa-read-progress.json") + '"></label>' +
+          '<label class="uaa-settings__field"><span>账号（坚果云邮箱）</span><input type="text" data-uaa-dav="user" value="' + (davConfig.user || "") + '"></label>' +
+          '<label class="uaa-settings__field"><span>应用密码（在坚果云安全选项中生成，不是登录密码）</span><input type="password" data-uaa-dav="pass" value="' + (davConfig.pass || "") + '"></label>' +
+          '<label class="uaa-settings__row"><input type="checkbox" data-uaa-dav="enabled"' + (davConfig.enabled !== false ? " checked" : "") + '><span>自动同步（章节页记录后上传，收藏页打开时拉取）</span></label>' +
+          '<div class="uaa-settings__foot">' +
+          '<button type="button" data-uaa-sync>立即同步</button>' +
+          "</div>" +
           '<div class="uaa-settings__foot">' +
           '<button type="button" data-uaa-save>保存并刷新</button>' +
           '<button type="button" data-uaa-clear>清除本地阅读记录</button>' +
@@ -799,6 +927,12 @@
           panel.querySelectorAll("[data-uaa-field]").forEach((input) => {
             patch[input.getAttribute("data-uaa-field")] = input.checked;
           });
+          const dav = {};
+          panel.querySelectorAll("[data-uaa-dav]").forEach((input) => {
+            const key = input.getAttribute("data-uaa-dav");
+            dav[key] = input.type === "checkbox" ? input.checked : input.value.trim();
+          });
+          saveSyncConfig(dav);
           saveUaaConfig(patch);
           location.reload();
         });
@@ -847,6 +981,21 @@
           };
           reader.readAsText(file);
           fileInput.value = "";
+        });
+        panel.querySelector("[data-uaa-sync]").addEventListener("click", () => {
+          const dav = {};
+          panel.querySelectorAll("[data-uaa-dav]").forEach((input) => {
+            const key = input.getAttribute("data-uaa-dav");
+            dav[key] = input.type === "checkbox" ? input.checked : input.value.trim();
+          });
+          saveSyncConfig(dav);
+          const note = panel.querySelector(".uaa-settings__note");
+          note.textContent = "正在同步…";
+          syncProgress("both").then(() => {
+            note.textContent = "同步完成，共 " + Object.keys(loadProgress()).length + " 本书的记录。";
+          }).catch((error) => {
+            note.textContent = "同步失败：" + error.message;
+          });
         });
       }
       panel.style.display = "flex";

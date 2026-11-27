@@ -120,4 +120,10 @@ assert.match(source, /\/\*UAA:FAV:START\*\//);
 assert.match(source, /\/\*UAA:D1:START\*\//);
 assert.match(source, /"uaa-settings"/);
 
+assert.match(source, /GM_xmlhttpRequest/);
+assert.match(source, /dav\.jianguoyun\.com/);
+assert.match(source, /"uaa-webdav"/);
+assert.match(source, /syncProgress/);
+assert.match(source, /scheduleSync/);
+
 console.log("userscript metadata and adaptive-title CSS checks passed");
