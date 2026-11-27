@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         UAA 书名完整显示与卡片自适应
 // @namespace    https://github.com/lingyuncrystal/uaa-full-book-titles
-// @version      1.3.1-dev.3
+// @version      1.3.1-dev.4
 // @description  （开发版）完整显示 UAA 小说书名，并让列表与首页书籍卡片随长标题自动增高；收藏页可按阅读中/追更/已读完分类。
 // @author       Alan
 // @icon         data:image/x-icon;base64,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AAAAAAAAAAr8AgAK+90ACvz7AAr8/wAK/P8ACvz/AAn6+QABMEoAAAAmAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAr7BgAK/BoACvwyAAr7UgAK/HQACfyXAAr8MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////////////////4B///4AD//4AAf/8A4D/+A/gf/gP8D/wH/g/8B/4H/Af+B/wH/wf8B/8H/AP/A/wD/wP8A/8D/AP/g/wD/4H8A/+B/AP/gfwD/8D8A//A/AH/wPwB/8D8Af/gfAH/4H4P/+B/////f///////////////8=
@@ -14,13 +14,23 @@
 // @grant        GM_addStyle
 // @grant        GM_getValue
 // @grant        GM_setValue
+// @grant        GM_registerMenuCommand
 // @noframes
 // ==/UserScript==
 
 (function () {
   "use strict";
 
-  GM_addStyle(`
+  const CONFIG_KEY = "uaa-config";
+  const CONFIG_DEFAULTS = { favTabs: true, favCrossPage: true, localProgress: true, favCompact: true, detailLatest: true };
+  let uaaConfig = CONFIG_DEFAULTS;
+  try { uaaConfig = Object.assign({}, CONFIG_DEFAULTS, GM_getValue(CONFIG_KEY, {}) || {}); } catch (error) {}
+  const saveUaaConfig = (patch) => {
+    uaaConfig = Object.assign({}, uaaConfig, patch);
+    try { GM_setValue(CONFIG_KEY, uaaConfig); } catch (error) {}
+  };
+
+  let uaaCss = `
     /* 小说列表：书名换行后，标题行与整张卡片随内容自动增高。 */
     a.cn-lcard[href*="/novel/intro"] {
       width: 100% !important;
@@ -170,6 +180,7 @@
       line-height: 1.5 !important;
     }
 
+    /*UAA:D1:START*/
     /* 详情页“最新：”行与列表卡片保持一致：小字号、灰白、章节名完整换行。 */
     #detail .nd-latest {
       display: flex !important;
@@ -204,6 +215,7 @@
       text-align: left !important;
     }
 
+    /*UAA:D1:END*/
     #detail .ndc-name {
       font-size: clamp(12px, 1.7vw, 14px) !important;
       line-height: 1.4 !important;
@@ -240,10 +252,12 @@
       white-space: nowrap !important;
     }
 
+    /*UAA:D2:START*/
     #detail .nd-latest .tm {
       margin-left: 0 !important;
       font-size: 11.5px !important;
     }
+    /*UAA:D2:END*/
 
     #detail .ndc-name {
       display: -webkit-box !important;
@@ -255,14 +269,12 @@
       text-overflow: ellipsis !important;
     }
 
+    /*UAA:FAV:START*/
     /* 收藏页手机端：改为三列紧凑卡片，PC 端保留站点原始布局。 */
-    @media (max-width: 767px) {
-      #favGridN.cl-grid {
+    @media (max-width: 767px) {#favGridN.cl-grid, #uaa-fav-all {
         grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
         gap: 10px !important;
-      }
-
-      #favGridN.cl-grid .cl-card {
+      }#favGridN.cl-grid .cl-card, #uaa-fav-all .cl-card {
         display: flex !important;
         flex-direction: column !important;
         min-width: 0 !important;
@@ -270,70 +282,50 @@
         height: auto !important;
         box-sizing: border-box !important;
         padding: 8px !important;
-      }
-
-      #favGridN.cl-grid .cl-card .cn-lcard__cv {
+      }#favGridN.cl-grid .cl-card .cn-lcard__cv, #uaa-fav-all .cl-card .cn-lcard__cv {
         width: 100% !important;
         height: auto !important;
         aspect-ratio: 2 / 3 !important;
         min-width: 0 !important;
-      }
-
-      #favGridN.cl-grid .cl-card .cn-lcard__cv img {
+      }#favGridN.cl-grid .cl-card .cn-lcard__cv img, #uaa-fav-all .cl-card .cn-lcard__cv img {
         width: 100% !important;
         height: 100% !important;
         object-fit: cover !important;
-      }
-
-      #favGridN.cl-grid .cl-card .cn-lcard__in {
+      }#favGridN.cl-grid .cl-card .cn-lcard__in, #uaa-fav-all .cl-card .cn-lcard__in {
         width: 100% !important;
         min-width: 0 !important;
         height: auto !important;
         padding-top: 5px !important;
-      }
-
-      #favGridN.cl-grid .cl-card .cn-lcard__t {
+      }#favGridN.cl-grid .cl-card .cn-lcard__t, #uaa-fav-all .cl-card .cn-lcard__t {
         font-size: clamp(11px, 2.2vw, 16px) !important;
         line-height: 1.25 !important;
-      }
-
-      #favGridN.cl-grid .cl-card .cn-lcard__by,
-      #favGridN.cl-grid .cl-card .cn-lcard__cats {
+      }#favGridN.cl-grid .cl-card .cn-lcard__by,
+      #favGridN.cl-grid .cl-card .cn-lcard__cats, #uaa-fav-all .cl-card .cn-lcard__by, #uaa-fav-all .cl-card .cn-lcard__cats {
         font-size: clamp(9px, 1.7vw, 11px) !important;
         line-height: 1.2 !important;
-      }
-
-      #favGridN.cl-grid .cl-card .cn-lcard__catlink {
+      }#favGridN.cl-grid .cl-card .cn-lcard__catlink, #uaa-fav-all .cl-card .cn-lcard__catlink {
         font-size: inherit !important;
         line-height: inherit !important;
-      }
-
-      #favGridN.cl-grid .cl-card .cn-lcard__by {
+      }#favGridN.cl-grid .cl-card .cn-lcard__by, #uaa-fav-all .cl-card .cn-lcard__by {
         display: block !important;
         min-width: 0 !important;
         white-space: nowrap !important;
         overflow: hidden !important;
         text-overflow: ellipsis !important;
-      }
-
-      #favGridN.cl-grid .cl-card .cn-lcard__meta {
+      }#favGridN.cl-grid .cl-card .cn-lcard__meta, #uaa-fav-all .cl-card .cn-lcard__meta {
         display: none !important;
-      }
-
-      #favGridN.cl-grid .cl-card .cl-mini__v {
+      }#favGridN.cl-grid .cl-card .cl-mini__v, #uaa-fav-all .cl-card .cl-mini__v {
         display: none !important;
-      }
-
-      #favGridN.cl-grid .cl-card .cn-lcard__foot {
+      }#favGridN.cl-grid .cl-card .cn-lcard__foot, #uaa-fav-all .cl-card .cn-lcard__foot {
         font-size: clamp(10px, 1.9vw, 13px) !important;
         line-height: 1.25 !important;
-      }
-
-      #favGridN.cl-grid .cl-card .cn-lcard__d {
+      }#favGridN.cl-grid .cl-card .cn-lcard__d, #uaa-fav-all .cl-card .cn-lcard__d {
         font-size: clamp(10px, 1.8vw, 12px) !important;
         line-height: 1.35 !important;
       }
 
+    /*UAA:FAV:END*/
+    /*UAA:D3:START*/
       /* 详情页手机端：缩小封面列加宽“最新：”行，去掉箭头，让时间与章节名同行。 */
       #detail .nd-hero__in {
         grid-template-columns: 96px minmax(0, 1fr) !important;
@@ -361,6 +353,7 @@
         display: none !important;
       }
     }
+    /*UAA:D3:END*/
 
     /* 首页/频道海报：取消一行或两行限制，并由卡片承接新增高度。 */
     a.cn-poster[href*="/novel/intro"] {
@@ -389,6 +382,7 @@
       max-height: none !important;
     }
 
+    /*UAA:TAB:START*/
     /* 收藏页分类 Tab：全部 / 阅读中 / 追更 / 已读完。 */
     .uaa-fav-tabs {
       display: flex !important;
@@ -427,32 +421,166 @@
     #favGridN .cl-card.uaa-hide {
       display: none !important;
     }
-  `);
+  
 
-  /* 收藏页：按观看历史（续读章节）给收藏书分类。 */
+    /*UAA:TAB:END*/
+
+    /* UAA 设置面板 */
+    #uaa-settings {
+      position: fixed !important;
+      inset: 0 !important;
+      z-index: 99999 !important;
+      display: none;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    #uaa-settings .uaa-settings__mask {
+      position: absolute !important;
+      inset: 0 !important;
+      background: rgba(0, 0, 0, 0.55) !important;
+    }
+
+    #uaa-settings .uaa-settings__panel {
+      position: relative !important;
+      width: min(440px, calc(100vw - 32px)) !important;
+      max-height: 80vh !important;
+      overflow: auto !important;
+      border-radius: 14px !important;
+      background: #1c1c22 !important;
+      color: #e8e6ec !important;
+      padding: 16px !important;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5) !important;
+      font-size: 13px !important;
+      line-height: 1.5 !important;
+    }
+
+    #uaa-settings .uaa-settings__head {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      margin-bottom: 12px !important;
+      font-size: 15px !important;
+    }
+
+    #uaa-settings .uaa-settings__head button {
+      border: 0 !important;
+      background: transparent !important;
+      color: #aaa !important;
+      font-size: 20px !important;
+      cursor: pointer !important;
+    }
+
+    #uaa-settings .uaa-settings__row {
+      display: flex !important;
+      gap: 8px !important;
+      align-items: flex-start !important;
+      padding: 8px 0 !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+      cursor: pointer !important;
+    }
+
+    #uaa-settings .uaa-settings__row input {
+      margin-top: 3px !important;
+    }
+
+    #uaa-settings .uaa-settings__foot {
+      display: flex !important;
+      gap: 8px !important;
+      margin-top: 14px !important;
+    }
+
+    #uaa-settings .uaa-settings__foot button {
+      flex: 1 !important;
+      padding: 8px 10px !important;
+      border-radius: 8px !important;
+      border: 1px solid rgba(255, 255, 255, 0.16) !important;
+      background: transparent !important;
+      color: #e8e6ec !important;
+      cursor: pointer !important;
+    }
+
+    #uaa-settings .uaa-settings__foot button[data-uaa-save] {
+      border-color: #ff2d55 !important;
+      background: rgba(255, 45, 85, 0.18) !important;
+      color: #fff !important;
+    }
+
+    #uaa-settings .uaa-settings__note {
+      margin-top: 10px !important;
+      color: #888 !important;
+      font-size: 11px !important;
+    }
+
+`;
+  if (!uaaConfig.favCompact) {
+    uaaCss = uaaCss.replace(/\/\*UAA:FAV:START\*\/[\s\S]*?\/\*UAA:FAV:END\*\//g, "");
+  }
+  if (!uaaConfig.detailLatest) {
+    uaaCss = uaaCss.replace(/\/\*UAA:D1:START\*\/[\s\S]*?\/\*UAA:D1:END\*\//g, "");
+    uaaCss = uaaCss.replace(/\/\*UAA:D2:START\*\/[\s\S]*?\/\*UAA:D2:END\*\//g, "");
+    uaaCss = uaaCss.replace(/\/\*UAA:D3:START\*\/[\s\S]*?\/\*UAA:D3:END\*\//g, "");
+  }
+  if (!uaaConfig.favTabs) {
+    uaaCss = uaaCss.replace(/\/\*UAA:TAB:START\*\/[\s\S]*?\/\*UAA:TAB:END\*\//g, "");
+  }
+  GM_addStyle(uaaCss);
+
+  /* ===== 本地阅读进度（章节页记录，长期保存） ===== */
+  const PROGRESS_KEY = "uaa-read-progress";
+  const loadProgress = () => {
+    try { return GM_getValue(PROGRESS_KEY, {}) || {}; } catch (error) { return {}; }
+  };
+  const saveProgress = (map) => {
+    try { GM_setValue(PROGRESS_KEY, map); } catch (error) {}
+  };
+  const recordChapterProgress = () => {
+    if (!uaaConfig.localProgress) return;
+    if (location.pathname.replace(/\/+$/, "") !== "/novel/chapter") return;
+    const pageWindow = typeof unsafeWindow !== "undefined" ? unsafeWindow : window;
+    let attempts = 0;
+    const timer = setInterval(() => {
+      const chapter = pageWindow.UAA_CHAPTER;
+      if (chapter && chapter.novelId) {
+        clearInterval(timer);
+        const map = loadProgress();
+        const previous = map[chapter.novelId];
+        const no = Number(chapter.no || 0);
+        if (!previous || no >= Number(previous.no || 0)) {
+          map[chapter.novelId] = { no, title: chapter.title || "", ts: Date.now() };
+          saveProgress(map);
+        }
+        return;
+      }
+      if (++attempts > 40) clearInterval(timer);
+    }, 250);
+  };
+  recordChapterProgress();
+
+  /* ===== 收藏页分类：本地进度 + 服务器历史，支持跨页全量 ===== */
   (function initFavTabs() {
     const path = location.pathname.replace(/\/+$/, "");
     if (path !== "/member/collect.html" && path !== "/member/collect") return;
+    if (!uaaConfig.favTabs) return;
 
     const uidKey = Object.keys(localStorage).find((key) => key.startsWith("uaa_dsync:"));
     const cacheKey = "uaa-fav-history:" + (uidKey ? uidKey.split(":")[1] : "anon");
     const TTL = 30 * 60 * 1000;
+    const localProgress = loadProgress();
+    const historyMap = {};
 
     const chapterNo = (text) => {
       const match = String(text || "").match(/第\s*(\d+)\s*章/);
       return match ? parseInt(match[1], 10) : null;
     };
-
-    const latestOf = (card) => {
-      const match = card.textContent.replace(/\s+/g, " ").match(/最新：\s*(第[^（(]{0,60})/);
+    const latestOf = (root) => {
+      const match = root.textContent.replace(/\s+/g, " ").match(/最新：\s*(第[^（(]{0,60})/);
       return match ? match[1].trim() : null;
     };
-
     const finishedOf = (card) => {
       const status = card.querySelector(".cn-st");
       return /完结/.test((status ? status.className + " " + status.textContent : "") + card.textContent);
     };
-
     const cardId = (card) => {
       const idEl = card.querySelector("[data-id]");
       if (idEl) return idEl.getAttribute("data-id");
@@ -461,35 +589,30 @@
       return match ? match[1] : null;
     };
 
-    const classify = (card, map) => {
-      const id = cardId(card);
-      const resume = id ? map[id] || null : null;
-      const latest = latestOf(card);
-      const finished = finishedOf(card);
-      const resumeNo = chapterNo(resume);
+    const classify = (id, latest, finished) => {
+      const local = localProgress[id];
+      const remote = historyMap[id];
+      if (!local && !remote) return "reading";
+      const localNo = local ? Number(local.no) || 0 : null;
+      const remoteNo = chapterNo(remote);
+      const resumeNo = localNo != null && remoteNo != null ? Math.max(localNo, remoteNo) : localNo != null ? localNo : remoteNo;
       const latestNo = chapterNo(latest);
-      if (!resume) return "reading";
-      if (resumeNo != null && latestNo != null) {
-        return resumeNo < latestNo ? "reading" : finished ? "finished" : "following";
-      }
-      if (resume && latest && resume === latest) return finished ? "finished" : "following";
-      return "reading";
+      if (resumeNo == null || latestNo == null) return "reading";
+      if (resumeNo < latestNo) return "reading";
+      return finished ? "finished" : "following";
     };
 
     const loadHistory = () => new Promise((resolve) => {
       try {
         const cached = GM_getValue(cacheKey, null);
         if (cached && cached.map && cached.ts && Date.now() - cached.ts < TTL) {
-          return resolve(cached.map);
+          Object.assign(historyMap, cached.map);
+          return resolve();
         }
       } catch (error) {}
-
-      const map = {};
       const done = () => {
-        try {
-          GM_setValue(cacheKey, { ts: Date.now(), map });
-        } catch (error) {}
-        resolve(map);
+        try { GM_setValue(cacheKey, { ts: Date.now(), map: historyMap }); } catch (error) {}
+        resolve();
       };
       const step = (page) => {
         if (page > 10) return done();
@@ -503,7 +626,7 @@
             items.forEach((item) => {
               const id = item.getAttribute("data-id");
               const go = item.querySelector(".cn-lact--go");
-              if (id && go) map[id] = go.textContent.replace(/^\s*续读\s*/, "").trim();
+              if (id && go) historyMap[id] = go.textContent.replace(/^\s*续读\s*/, "").trim();
             });
             step(page + 1);
           })
@@ -512,14 +635,77 @@
       step(1);
     });
 
-    const buildTabs = (grid) => {
-      if (document.querySelector(".uaa-fav-tabs")) return;
-      const counts = { all: 0, reading: 0, following: 0, finished: 0 };
-      grid.querySelectorAll(".cl-card").forEach((card) => {
-        const category = card.getAttribute("data-uaa-cat") || "reading";
-        counts.all += 1;
-        counts[category] = (counts[category] || 0) + 1;
+    const readCard = (card) => ({
+      id: cardId(card),
+      title: card.getAttribute("data-title") || "",
+      latest: latestOf(card),
+      finished: finishedOf(card),
+      html: card.outerHTML,
+    });
+
+    const collectCards = () => [...document.querySelectorAll("#favGridN .cl-card")].map(readCard);
+
+    const collectCardsAllPages = () => {
+      const links = [...document.querySelectorAll('a[href*="page="]')].map((a) => a.getAttribute("href") || "");
+      let maxPage = 1;
+      links.forEach((href) => {
+        const match = href.match(/[?&]page=(\d+)/);
+        if (match) maxPage = Math.max(maxPage, parseInt(match[1], 10));
       });
+      const base = "/member/collect?sub=fav&type=1&sort=1&asc=0&keyword=&page=";
+      const cards = [];
+      let page = 1;
+      const step = () => {
+        if (page > Math.min(maxPage, 30)) return Promise.resolve(cards);
+        return fetch(base + page, { credentials: "include" })
+          .then((res) => (res.ok ? res.text() : ""))
+          .then((html) => {
+            if (!html) return cards;
+            const doc = new DOMParser().parseFromString(html, "text/html");
+            doc.querySelectorAll("#favGridN .cl-card").forEach((card) => cards.push(readCard(card)));
+            page += 1;
+            return step();
+          })
+          .catch(() => cards);
+      };
+      return step();
+    };
+
+    const renderView = (grid, cards, category) => {
+      let view = document.getElementById("uaa-fav-all");
+      if (!view) {
+        view = document.createElement("div");
+        view.id = "uaa-fav-all";
+        view.className = "cl-grid";
+        grid.parentNode.insertBefore(view, grid.nextSibling);
+      }
+      view.innerHTML = "";
+      cards
+        .filter((card) => category === "all" || card.category === category)
+        .forEach((card) => {
+          const holder = document.createElement("div");
+          holder.innerHTML = card.html;
+          const el = holder.firstElementChild;
+          if (el) view.appendChild(el);
+        });
+      view.querySelectorAll("img[data-src]").forEach((img) => {
+        const src = img.getAttribute("data-src");
+        if (src) img.src = src;
+      });
+      return view;
+    };
+
+    const applyTab = (grid, cards, key) => {
+      const view = renderView(grid, cards, key);
+      const showAll = key === "all";
+      view.style.display = showAll ? "none" : "";
+      grid.style.display = showAll ? "" : "none";
+    };
+
+    const buildTabs = (grid, cards) => {
+      if (document.querySelector(".uaa-fav-tabs")) return;
+      const counts = { all: cards.length, reading: 0, following: 0, finished: 0 };
+      cards.forEach((card) => { counts[card.category] += 1; });
       const bar = document.createElement("div");
       bar.className = "uaa-fav-tabs";
       bar.setAttribute("role", "tablist");
@@ -529,7 +715,7 @@
         ["following", "追更"],
         ["finished", "已读完"],
       ]
-        .map(([key, text]) => '<button type="button" role="tab" data-uaa-tab="' + key + '" class="' + (key === "all" ? "is-on" : "") + '">' + text + "<i>" + (counts[key] || 0) + "</i></button>")
+        .map(([key, text]) => '<button type="button" role="tab" data-uaa-tab="' + key + '" class="' + (key === "all" ? "is-on" : "") + '">' + text + "<i>" + counts[key] + "</i></button>")
         .join("");
       grid.parentNode.insertBefore(bar, grid);
       bar.addEventListener("click", (event) => {
@@ -537,20 +723,19 @@
         if (!button) return;
         const key = button.getAttribute("data-uaa-tab");
         bar.querySelectorAll("button").forEach((btn) => btn.classList.toggle("is-on", btn === button));
-        grid.querySelectorAll(".cl-card").forEach((card) => {
-          const show = key === "all" || card.getAttribute("data-uaa-cat") === key;
-          card.classList.toggle("uaa-hide", !show);
-        });
+        applyTab(grid, cards, key);
       });
     };
 
     const run = (grid) => {
-      loadHistory().then((map) => {
-        if (!map || !Object.keys(map).length) return;
-        grid.querySelectorAll(".cl-card").forEach((card) => {
-          card.setAttribute("data-uaa-cat", classify(card, map));
+      loadHistory().then(() => {
+        const prepare = uaaConfig.favCrossPage ? collectCardsAllPages() : Promise.resolve(collectCards());
+        prepare.then((cards) => {
+          cards.forEach((card) => {
+            card.category = classify(card.id, card.latest, card.finished);
+          });
+          buildTabs(grid, cards);
         });
-        buildTabs(grid);
       });
     };
 
@@ -571,6 +756,54 @@
       document.addEventListener("DOMContentLoaded", waitForGrid);
     } else {
       waitForGrid();
+    }
+  })();
+
+  /* ===== UAA 设置面板（脚本菜单打开） ===== */
+  (function initSettings() {
+    const FIELDS = [
+      ["favTabs", "收藏页分类 Tab（阅读中 / 追更 / 已读完）"],
+      ["favCrossPage", "收藏页跨页统计（Tab 计数覆盖全部收藏，不限当前页）"],
+      ["localProgress", "本地阅读进度（章节页记录，长期保存，不受服务器 90 天限制）"],
+      ["favCompact", "收藏页手机端紧凑布局（三列 / 隐藏统计 / 缩小封面）"],
+      ["detailLatest", "详情页「最新：」行样式（缩小封面、去掉箭头、时间同行）"],
+    ];
+    const open = () => {
+      let panel = document.getElementById("uaa-settings");
+      if (!panel) {
+        panel = document.createElement("div");
+        panel.id = "uaa-settings";
+        panel.innerHTML =
+          '<div class="uaa-settings__mask"></div>' +
+          '<div class="uaa-settings__panel">' +
+          '<div class="uaa-settings__head"><b>UAA 脚本设置</b><button type="button" data-uaa-close aria-label="关闭">×</button></div>' +
+          FIELDS.map(([key, label]) => '<label class="uaa-settings__row"><input type="checkbox" data-uaa-field="' + key + '"' + (uaaConfig[key] ? " checked" : "") + '><span>' + label + "</span></label>").join("") +
+          '<div class="uaa-settings__foot">' +
+          '<button type="button" data-uaa-save>保存并刷新</button>' +
+          '<button type="button" data-uaa-clear>清除本地阅读记录</button>' +
+          "</div>" +
+          '<div class="uaa-settings__note">保存后页面会刷新，开关立即生效。</div>' +
+          "</div>";
+        document.body.appendChild(panel);
+        panel.querySelector("[data-uaa-close]").addEventListener("click", () => { panel.style.display = "none"; });
+        panel.querySelector(".uaa-settings__mask").addEventListener("click", () => { panel.style.display = "none"; });
+        panel.querySelector("[data-uaa-save]").addEventListener("click", () => {
+          const patch = {};
+          panel.querySelectorAll("[data-uaa-field]").forEach((input) => {
+            patch[input.getAttribute("data-uaa-field")] = input.checked;
+          });
+          saveUaaConfig(patch);
+          location.reload();
+        });
+        panel.querySelector("[data-uaa-clear]").addEventListener("click", () => {
+          saveProgress({});
+          panel.querySelector(".uaa-settings__note").textContent = "本地阅读记录已清除。";
+        });
+      }
+      panel.style.display = "flex";
+    };
+    if (typeof GM_registerMenuCommand === "function") {
+      try { GM_registerMenuCommand("UAA 设置", open); } catch (error) {}
     }
   })();
 })();
