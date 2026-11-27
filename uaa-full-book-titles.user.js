@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         UAA 书名完整显示与卡片自适应
 // @namespace    https://github.com/lingyuncrystal/uaa-full-book-titles
-// @version      1.3.1-dev.10
+// @version      1.3.1-dev.11
 // @description  （开发版）完整显示 UAA 小说书名，并让列表与首页书籍卡片随长标题自动增高；收藏页可按阅读中/追更/已读完分类。
 // @author       Alan
 // @icon         data:image/x-icon;base64,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AAAAAAAAAAr8AgAK+90ACvz7AAr8/wAK/P8ACvz/AAn6+QABMEoAAAAmAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAr7BgAK/BoACvwyAAr7UgAK/HQACfyXAAr8MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////////////////4B///4AD//4AAf/8A4D/+A/gf/gP8D/wH/g/8B/4H/Af+B/wH/wf8B/8H/AP/A/wD/wP8A/8D/AP/g/wD/4H8A/+B/AP/gfwD/8D8A//A/AH/wPwB/8D8Af/gfAH/4H4P/+B/////f///////////////8=
-// @downloadURL  https://cdn.jsdelivr.net/gh/lingyuncrystal/uaa-full-book-titles@dev/uaa-full-book-titles.user.js
-// @updateURL    https://cdn.jsdelivr.net/gh/lingyuncrystal/uaa-full-book-titles@dev/uaa-full-book-titles.user.js
+// @downloadURL  https://raw.githubusercontent.com/lingyuncrystal/uaa-full-book-titles/dev/uaa-full-book-titles.user.js
+// @updateURL    https://raw.githubusercontent.com/lingyuncrystal/uaa-full-book-titles/dev/uaa-full-book-titles.user.js
 // @match        *://vip261112.com/*
 // @match        *://*.vip261112.com/*
 // @include      /^https?:\/\/(?:[^/]+\.)?uaa[a-z0-9-]*\.com(?::\d+)?(?:\/|$)/
@@ -615,14 +615,15 @@
     });
     return current;
   };
-  const webdavRequest = (method, payload) => new Promise((resolve, reject) => {
+  const webdavRequest = (method, payload, urlOverride) => new Promise((resolve, reject) => {
     const cfg = loadSyncConfig();
-    if (!cfg.url || !cfg.user || !cfg.pass) return reject(new Error("WebDAV 未配置"));
+    const target = urlOverride || cfg.url;
+    if (!target || !cfg.user || !cfg.pass) return reject(new Error("WebDAV 未配置"));
     const headers = { Authorization: "Basic " + btoa(cfg.user + ":" + cfg.pass) };
     if (payload != null) headers["Content-Type"] = "application/json";
     GM_xmlhttpRequest({
       method,
-      url: cfg.url,
+      url: target,
       headers,
       data: payload == null ? undefined : payload,
       timeout: 15000,
@@ -640,11 +641,27 @@
       return parsed.progress || parsed || {};
     } catch (error) { return null; }
   };
+  const ensureParentDir = async () => {
+    const cfg = loadSyncConfig();
+    if (!cfg.url) return;
+    let url;
+    try { url = new URL(cfg.url); } catch (error) { return; }
+    const dir = url.pathname.replace(/[^/]*$/, "");
+    if (!dir || dir === "/" || dir === "/dav/") return;
+    const dirUrl = url.origin + dir;
+    const res = await webdavRequest("MKCOL", null, dirUrl);
+    if (res.status === 401) throw new Error("账号或应用密码错误");
+    if (res.status >= 400 && res.status !== 405) {
+      throw new Error("创建目录失败 HTTP " + res.status + "（" + dir + "）");
+    }
+  };
   const pushRemote = async () => {
+    await ensureParentDir();
     const progress = loadProgress();
     const res = await webdavRequest("PUT", JSON.stringify({ exportedAt: new Date().toISOString(), progress }, null, 2));
     if (res.status >= 200 && res.status < 300) return true;
     if (res.status === 401) throw new Error("账号或应用密码错误");
+    if (res.status === 404) throw new Error("路径不存在（HTTP 404）：请确认 WebDAV 地址在坚果云中可写，例如 https://dav.jianguoyun.com/dav/uaa/uaa-read-progress.json");
     throw new Error("HTTP " + res.status);
   };
   const syncProgress = async (direction) => {
@@ -958,7 +975,7 @@
             "</details>"
           ).join("") +
           '<details class="uaa-settings__group"><summary>同步（坚果云 WebDAV）</summary>' +
-          '<label class="uaa-settings__field"><span>WebDAV 文件地址</span><input type="text" data-uaa-dav="url" value="' + (davConfig.url || "https://dav.jianguoyun.com/dav/uaa-read-progress.json") + '"></label>' +
+          '<label class="uaa-settings__field"><span>WebDAV 文件地址</span><input type="text" data-uaa-dav="url" value="' + (davConfig.url || "https://dav.jianguoyun.com/dav/uaa/uaa-read-progress.json") + '"></label>' +
           '<label class="uaa-settings__field"><span>账号（坚果云邮箱）</span><input type="text" data-uaa-dav="user" value="' + (davConfig.user || "") + '"></label>' +
           '<label class="uaa-settings__field"><span>应用密码（在坚果云安全选项中生成，不是登录密码）</span><input type="password" data-uaa-dav="pass" value="' + (davConfig.pass || "") + '"></label>' +
           '<label class="uaa-settings__row"><input type="checkbox" data-uaa-dav="enabled"' + (davConfig.enabled !== false ? " checked" : "") + '><span>自动同步（章节页记录后上传，收藏页打开时拉取）</span></label>' +
