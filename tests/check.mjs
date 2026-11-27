@@ -21,11 +21,11 @@ assert.deepEqual(
 );
 assert.match(
   source,
-  /@downloadURL\s+https:\/\/raw\.githubusercontent\.com\/lingyuncrystal\/uaa-full-book-titles\/main\/uaa-full-book-titles\.user\.js/,
+  /@downloadURL\s+https:\/\/raw\.githubusercontent\.com\/lingyuncrystal\/uaa-full-book-titles\/(main|dev)\/uaa-full-book-titles\.user\.js/,
 );
 assert.match(
   source,
-  /@updateURL\s+https:\/\/raw\.githubusercontent\.com\/lingyuncrystal\/uaa-full-book-titles\/main\/uaa-full-book-titles\.user\.js/,
+  /@updateURL\s+https:\/\/raw\.githubusercontent\.com\/lingyuncrystal\/uaa-full-book-titles\/(main|dev)\/uaa-full-book-titles\.user\.js/,
 );
 assert.match(source, /@match\s+\*:\/\/vip261112\.com\/\*/);
 assert.match(source, /@match\s+\*:\/\/\*\.vip261112\.com\/\*/);
