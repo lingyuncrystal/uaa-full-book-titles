@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         UAA 书名完整显示与卡片自适应
 // @namespace    https://github.com/lingyuncrystal/uaa-full-book-titles
-// @version      1.2.4
-// @description  完整显示 UAA 小说书名，并让列表与首页书籍卡片随长标题自动增高。
+// @version      1.3.0
+// @description  完整显示 UAA 小说书名，并让列表与首页书籍卡片随长标题自动增高；收藏页可按阅读中/追更/已读完分类。
 // @author       Alan
 // @icon         data:image/x-icon;base64,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AAAAAAAAAAr8AgAK+90ACvz7AAr8/wAK/P8ACvz/AAn6+QABMEoAAAAmAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAr7BgAK/BoACvwyAAr7UgAK/HQACfyXAAr8MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////////////////4B///4AD//4AAf/8A4D/+A/gf/gP8D/wH/g/8B/4H/Af+B/wH/wf8B/8H/AP/A/wD/wP8A/8D/AP/g/wD/4H8A/+B/AP/gfwD/8D8A//A/AH/wPwB/8D8Af/gfAH/4H4P/+B/////f///////////////8=
 // @downloadURL  https://raw.githubusercontent.com/lingyuncrystal/uaa-full-book-titles/main/uaa-full-book-titles.user.js
@@ -12,6 +12,8 @@
 // @include      /^https?:\/\/(?:[^/]+\.)?uaa[a-z0-9-]*\.com(?::\d+)?(?:\/|$)/
 // @run-at       document-start
 // @grant        GM_addStyle
+// @grant        GM_getValue
+// @grant        GM_setValue
 // @noframes
 // ==/UserScript==
 
@@ -386,5 +388,189 @@
       height: auto !important;
       max-height: none !important;
     }
+
+    /* 收藏页分类 Tab：全部 / 阅读中 / 追更 / 已读完。 */
+    .uaa-fav-tabs {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 8px !important;
+      margin: 12px 0 14px !important;
+    }
+
+    .uaa-fav-tabs button {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 4px !important;
+      padding: 6px 12px !important;
+      border: 1px solid rgba(255, 255, 255, 0.16) !important;
+      border-radius: 999px !important;
+      background: transparent !important;
+      color: rgba(255, 255, 255, 0.72) !important;
+      font-size: 12px !important;
+      line-height: 1.2 !important;
+      cursor: pointer !important;
+      -webkit-tap-highlight-color: transparent !important;
+    }
+
+    .uaa-fav-tabs button.is-on {
+      border-color: #ff2d55 !important;
+      color: #fff !important;
+      background: rgba(255, 45, 85, 0.18) !important;
+    }
+
+    .uaa-fav-tabs button i {
+      font-style: normal !important;
+      font-size: 11px !important;
+      opacity: 0.68 !important;
+    }
+
+    #favGridN .cl-card.uaa-hide {
+      display: none !important;
+    }
   `);
+
+  /* 收藏页：按观看历史（续读章节）给收藏书分类。 */
+  (function initFavTabs() {
+    const path = location.pathname.replace(/\/+$/, "");
+    if (path !== "/member/collect.html" && path !== "/member/collect") return;
+
+    const uidKey = Object.keys(localStorage).find((key) => key.startsWith("uaa_dsync:"));
+    const cacheKey = "uaa-fav-history:" + (uidKey ? uidKey.split(":")[1] : "anon");
+    const TTL = 30 * 60 * 1000;
+
+    const chapterNo = (text) => {
+      const match = String(text || "").match(/第\s*(\d+)\s*章/);
+      return match ? parseInt(match[1], 10) : null;
+    };
+
+    const latestOf = (card) => {
+      const match = card.textContent.replace(/\s+/g, " ").match(/最新：\s*(第[^（(]{0,60})/);
+      return match ? match[1].trim() : null;
+    };
+
+    const finishedOf = (card) => {
+      const status = card.querySelector(".cn-st");
+      return /完结/.test((status ? status.className + " " + status.textContent : "") + card.textContent);
+    };
+
+    const cardId = (card) => {
+      const idEl = card.querySelector("[data-id]");
+      if (idEl) return idEl.getAttribute("data-id");
+      const link = card.querySelector('a[href*="/novel/intro"]');
+      const match = link && link.getAttribute("href").match(/id=(\d+)/);
+      return match ? match[1] : null;
+    };
+
+    const classify = (card, map) => {
+      const id = cardId(card);
+      const resume = id ? map[id] || null : null;
+      const latest = latestOf(card);
+      const finished = finishedOf(card);
+      const resumeNo = chapterNo(resume);
+      const latestNo = chapterNo(latest);
+      if (!resume) return "reading";
+      if (resumeNo != null && latestNo != null) {
+        return resumeNo < latestNo ? "reading" : finished ? "finished" : "following";
+      }
+      if (resume && latest && resume === latest) return finished ? "finished" : "following";
+      return "reading";
+    };
+
+    const loadHistory = () => new Promise((resolve) => {
+      try {
+        const cached = GM_getValue(cacheKey, null);
+        if (cached && cached.map && cached.ts && Date.now() - cached.ts < TTL) {
+          return resolve(cached.map);
+        }
+      } catch (error) {}
+
+      const map = {};
+      const done = () => {
+        try {
+          GM_setValue(cacheKey, { ts: Date.now(), map });
+        } catch (error) {}
+        resolve(map);
+      };
+      const step = (page) => {
+        if (page > 10) return done();
+        fetch("/member/history?type=1&page=" + page, { credentials: "include" })
+          .then((res) => (res.ok ? res.text() : ""))
+          .then((html) => {
+            if (!html) return done();
+            const doc = new DOMParser().parseFromString(html, "text/html");
+            const items = doc.querySelectorAll(".hi-item");
+            if (!items.length) return done();
+            items.forEach((item) => {
+              const id = item.getAttribute("data-id");
+              const go = item.querySelector(".cn-lact--go");
+              if (id && go) map[id] = go.textContent.replace(/^\s*续读\s*/, "").trim();
+            });
+            step(page + 1);
+          })
+          .catch(() => done());
+      };
+      step(1);
+    });
+
+    const buildTabs = (grid) => {
+      if (document.querySelector(".uaa-fav-tabs")) return;
+      const counts = { all: 0, reading: 0, following: 0, finished: 0 };
+      grid.querySelectorAll(".cl-card").forEach((card) => {
+        const category = card.getAttribute("data-uaa-cat") || "reading";
+        counts.all += 1;
+        counts[category] = (counts[category] || 0) + 1;
+      });
+      const bar = document.createElement("div");
+      bar.className = "uaa-fav-tabs";
+      bar.setAttribute("role", "tablist");
+      bar.innerHTML = [
+        ["all", "全部"],
+        ["reading", "阅读中"],
+        ["following", "追更"],
+        ["finished", "已读完"],
+      ]
+        .map(([key, text]) => '<button type="button" role="tab" data-uaa-tab="' + key + '" class="' + (key === "all" ? "is-on" : "") + '">' + text + "<i>" + (counts[key] || 0) + "</i></button>")
+        .join("");
+      grid.parentNode.insertBefore(bar, grid);
+      bar.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-uaa-tab]");
+        if (!button) return;
+        const key = button.getAttribute("data-uaa-tab");
+        bar.querySelectorAll("button").forEach((btn) => btn.classList.toggle("is-on", btn === button));
+        grid.querySelectorAll(".cl-card").forEach((card) => {
+          const show = key === "all" || card.getAttribute("data-uaa-cat") === key;
+          card.classList.toggle("uaa-hide", !show);
+        });
+      });
+    };
+
+    const run = (grid) => {
+      loadHistory().then((map) => {
+        if (!map || !Object.keys(map).length) return;
+        grid.querySelectorAll(".cl-card").forEach((card) => {
+          card.setAttribute("data-uaa-cat", classify(card, map));
+        });
+        buildTabs(grid);
+      });
+    };
+
+    const waitForGrid = () => {
+      const grid = document.getElementById("favGridN");
+      if (grid) return run(grid);
+      const timer = setInterval(() => {
+        const found = document.getElementById("favGridN");
+        if (found) {
+          clearInterval(timer);
+          run(found);
+        }
+      }, 300);
+      setTimeout(() => clearInterval(timer), 10000);
+    };
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", waitForGrid);
+    } else {
+      waitForGrid();
+    }
+  })();
 })();

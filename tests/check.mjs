@@ -6,7 +6,7 @@ const source = await readFile(
   "utf8",
 );
 
-assert.match(source, /@version\s+1\.2\.4/);
+assert.match(source, /@version\s+1\.3\.0/);
 assert.match(source, /@grant\s+GM_addStyle/);
 const iconMatch = source.match(
   /^\/\/ @icon\s+data:image\/x-icon;base64,([A-Za-z0-9+/=]+)$/m,
@@ -98,5 +98,16 @@ assert.match(source, /#detail \.nd-latest \.nd-go\s*\{[^}]*display:\s*none !impo
 assert.match(source, /#detail \.nd-latest\s*\{[^}]*flex-wrap:\s*nowrap !important;/s, "mobile detail latest row must not wrap");
 assert.match(source, /#detail \.nd-latest\s*\{[^}]*gap:\s*0 !important;/s, "latest label and chapter must have no gap");
 assert.match(source, /#detail \.nd-latest > b\s*\{[^}]*margin-right:\s*0 !important;/s, "chapter must touch the time");
+
+assert.match(source, /@grant\s+GM_getValue/);
+assert.match(source, /@grant\s+GM_setValue/);
+assert.match(source, /member\/collect/);
+assert.match(source, /\.cn-lact--go/);
+assert.match(source, /data-uaa-cat/);
+assert.match(source, /uaa-fav-tabs/);
+assert.match(source, /uaa-hide/);
+assert.match(source, /"reading"/);
+assert.match(source, /"following"/);
+assert.match(source, /"finished"/);
 
 console.log("userscript metadata and adaptive-title CSS checks passed");
